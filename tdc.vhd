@@ -15,14 +15,15 @@ use unisim.vcomponents.all;
 --use SIMPRIM.VPACKAGE.ALL;
 
 entity tdc is
-	generic (
-				stages	: integer := 4;
-				Xoff			: integer := 8;
-				Yoff			: integer := 24);
-	port (	stop			: in std_logic;
-				salida		: out std_logic_vector(stages - 1 downto 0);
-				clock		: in std_logic;
-				reset		: in std_logic);
+	generic(
+		stages	: integer := 12;
+		Xoff		: integer := 8;
+		Yoff		: integer := 24);
+	port(
+		stop		: in std_logic;
+		salida	: out std_logic_vector(stages - 1 downto 0);
+		clock_in	: in std_logic;
+		reset		: in std_logic);
 end tdc;
 
 architecture behavioral of tdc is
@@ -37,20 +38,31 @@ architecture behavioral of tdc is
 	
 	type carry_type is array (natural range<>) of std_logic_vector(3 downto 0);
 	
-	signal carrys	:	carry_type(stages - 1 downto 0);
+	signal carrys	:	carry_type(stages downto 0);
 		 
-	--signal unreg    :   std_logic_vector(stages - 1 downto 0);
-	signal unreg    :   std_logic_vector(0 to stages - 1);
-	--signal reg      :   std_logic_vector(stages - 1 downto 0);
-	signal reg    :   std_logic_vector(0 to stages - 1);
+	signal unreg    :   std_logic_vector(stages - 1 downto 0);
+	signal reg      :   std_logic_vector(stages - 1 downto 0);
 	
-	attribute async_reg of unreg : signal is "true";
+	signal sys_clk	:	std_logic;
+	
+	attribute async_reg of salida : signal is "true";
 	attribute async_reg of reg : signal is "true";
 
 begin
 
-	carr_delay_line : for i in 0 to stages - 1 generate
-	--carr_delay_line : for i in 0 to stages/4 - 1 generate
+	dfs : entity work.dfs
+		generic map(
+			dcm_per => 20.0,
+			dfs_div => 2,
+			dfs_mul => 2)
+		port map(
+			dcm_rst	=> reset,
+			dcm_clk	=> clock_in,
+			dfs_clk	=> sys_clk,
+			dcm_lck	=> open);
+			
+	--carr_delay_line : for i in 0 to stages - 1 generate
+	carr_delay_line : for i in 0 to stages/4 - 1 generate
 	
 		first_delay_block : if i = 0 generate
 			attribute loc of delay_block : label is "SLICE_X"&INTEGER'image(Xoff)&"Y"&integer'image(Yoff+i);
@@ -58,15 +70,15 @@ begin
 		begin	
 
 			delay_block: carry4 
-				port map(
-					co 		=> carrys(0),
-					--co			=> unreg(3 downto 0),
+				port map (
+					--co 		=> carrys(0),
+					co			=> unreg(3 downto 0),
 					ci 		=> '0',
-					cyinit	=> clock,
+					cyinit	=> sys_clk,
 					di 		=> "0000",
 					s 			=> "1111");
 					
-			unreg(i) <= carrys(i)(2);
+			--unreg(i) <= carrys(i)(2);
 			
 		end generate;
 		
@@ -77,15 +89,15 @@ begin
 		
 			delay_block: carry4 
 				port map(
-					co		=> carrys(i),
-					--co			=> unreg(4*(i+1)-1 DOWNTO 4*i),
-					ci			=> carrys(i-1)(3),
-					--ci			=> unreg(4*i-1),
+					--co		=> carrys(i),
+					co			=> unreg(4*(i+1)-1 DOWNTO 4*i),
+					--ci			=> carrys(i-1)(3),
+					ci			=> unreg(4*i-1),
 					cyinit	=> '0',
 					di 		=> "0000",
 					s 			=> "1111");
 				
-			unreg(i) <= carrys(i)(3);
+			--unreg(i) <= carrys(i)(3);
 		end generate;
 		
 	end generate;
@@ -98,7 +110,7 @@ begin
 		
 		fdc0_inst: fdc
 			generic map(
-				init 	=> '1')
+				init 	=> '0')
 			port map(
 				c 		=> stop,
 				clr	=> reset,
@@ -107,7 +119,7 @@ begin
 		
 		fdc1_inst: fdc
 			generic map(
-				init 	=> '1')
+				init 	=> '0')
 			port map(
 				c 		=> stop,
 				clr	=> reset,

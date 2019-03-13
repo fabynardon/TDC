@@ -35,19 +35,7 @@ USE ieee.std_logic_1164.ALL;
 ENTITY tdc_tb IS
 END tdc_tb;
  
-ARCHITECTURE behavior OF tdc_tb IS 
- 
-    -- Component Declaration for the Unit Under Test (UUT)
- 
-    COMPONENT tdc
-    PORT(
-         stop : IN  std_logic;
-         salida : OUT  std_logic_vector(3 downto 0);
-         clock : IN  std_logic;
-         reset : IN  std_logic
-        );
-    END COMPONENT;
-    
+ARCHITECTURE behavior OF tdc_tb IS  
 
    --Inputs
    signal stop : std_logic := '0';
@@ -55,19 +43,20 @@ ARCHITECTURE behavior OF tdc_tb IS
    signal reset : std_logic := '0';
 
  	--Outputs
-   signal salida : std_logic_vector(3 downto 0);
+   signal salida : std_logic_vector(11 downto 0);
 
    -- Clock period definitions
-   constant clock_period : time := 698 ps;
+   constant clock_period : time := 20 ns;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: tdc PORT MAP (
-          stop => stop,
-          salida => salida,
-          clock => clock,
-          reset => reset
+   uut: entity work.tdc 
+		PORT MAP (
+			stop => stop,
+         salida => salida,
+         clock_in => clock,
+         reset => reset
         );
 
    -- Clock process definitions
@@ -85,17 +74,12 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin	
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
+		reset <= '1';
+      wait for 100 ns;
+		reset <= '0';
       wait for clock_period*10;
 		
       -- insert stimulus here 
-		reset <= '1';
-		
-		wait for clock_period*10;
-		
-		reset <= '0';
 		
       wait;
    end process;
