@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="F:/TDC/ISE/TDC/tdc_tb_isim_par.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="tdc_tb" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="vital_primitives" />
+            <top_module name="vital_timing" />
+            <top_module name="vpackage" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="8" />
+   <wave_markers>
+      <marker time="385351000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/tdc_tb/stop" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">stop</obj_property>
+      <obj_property name="ObjectShortName">stop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tdc_tb/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tdc_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tdc_tb/uut/unreg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">unreg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">unreg[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="vbus269" type="vbus" db_ref_id="1">
+      <obj_property name="label">fdc0_inst_clk</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tdc_tb/uut/nlwbuffersignal_latch_0_fdc0_inst_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">nlwbuffersignal_latch_0_fdc0_inst_clk</obj_property>
+         <obj_property name="ObjectShortName">nlwbuffersignal_latch_0_fdc0_inst_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tdc_tb/uut/nlwbuffersignal_latch_1_fdc0_inst_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">nlwbuffersignal_latch_1_fdc0_inst_clk</obj_property>
+         <obj_property name="ObjectShortName">nlwbuffersignal_latch_1_fdc0_inst_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tdc_tb/uut/nlwbuffersignal_latch_2_fdc0_inst_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">nlwbuffersignal_latch_2_fdc0_inst_clk</obj_property>
+         <obj_property name="ObjectShortName">nlwbuffersignal_latch_2_fdc0_inst_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tdc_tb/uut/nlwbuffersignal_latch_3_fdc0_inst_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">nlwbuffersignal_latch_3_fdc0_inst_clk</obj_property>
+         <obj_property name="ObjectShortName">nlwbuffersignal_latch_3_fdc0_inst_clk</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tdc_tb/uut/reg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">reg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">reg[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="vbus270" type="vbus" db_ref_id="1">
+      <obj_property name="label">fdc1_inst_clk</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tdc_tb/uut/nlwbuffersignal_latch_0_fdc1_inst_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">nlwbuffersignal_latch_0_fdc1_inst_clk</obj_property>
+         <obj_property name="ObjectShortName">nlwbuffersignal_latch_0_fdc1_inst_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tdc_tb/uut/nlwbuffersignal_latch_1_fdc1_inst_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">nlwbuffersignal_latch_1_fdc1_inst_clk</obj_property>
+         <obj_property name="ObjectShortName">nlwbuffersignal_latch_1_fdc1_inst_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tdc_tb/uut/nlwbuffersignal_latch_2_fdc1_inst_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">nlwbuffersignal_latch_2_fdc1_inst_clk</obj_property>
+         <obj_property name="ObjectShortName">nlwbuffersignal_latch_2_fdc1_inst_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tdc_tb/uut/nlwbuffersignal_latch_3_fdc1_inst_clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">nlwbuffersignal_latch_3_fdc1_inst_clk</obj_property>
+         <obj_property name="ObjectShortName">nlwbuffersignal_latch_3_fdc1_inst_clk</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tdc_tb/salida" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">salida[3:0]</obj_property>
+      <obj_property name="ObjectShortName">salida[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

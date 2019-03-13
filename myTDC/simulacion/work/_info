@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Fabia
+Etdc
+Z0 w1552432424
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dF:/TDC/myTDC/simulacion
+Z5 8F:/TDC/myTDC/tdc.vhd
+Z6 FF:/TDC/myTDC/tdc.vhd
+l0
+L5
+VPHl0U5N;Ai_11bJ]dmUYl0
+!s100 z@6W@z>zLJR2CVP5CPAfA1
+Z7 OP;C;10.4a;61
+32
+Z8 !s110 1552432425
+!i10b 1
+Z9 !s108 1552432425.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/TDC/myTDC/tdc.vhd|
+Z11 !s107 F:/TDC/myTDC/tdc.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+Aarq
+R1
+R2
+R3
+Z14 DEx4 work 3 tdc 0 22 PHl0U5N;Ai_11bJ]dmUYl0
+l21
+L8
+VY<n3d[6JId`1S9CQzJh;81
+!s100 CVYZ30S:PMek<FcCJ117^3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Etdc_cell
+Z15 w1550167282
+R2
+R3
+R4
+Z16 8F:/TDC/myTDC/tdc_cell.vhd
+Z17 FF:/TDC/myTDC/tdc_cell.vhd
+l0
+L4
+VCI8PjEYXnmRdRTA@FVC2Q2
+!s100 ke82;KUVZOR1We8;`jTV33
+R7
+32
+Z18 !s110 1552432424
+!i10b 1
+Z19 !s108 1552432424.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/TDC/myTDC/tdc_cell.vhd|
+Z21 !s107 F:/TDC/myTDC/tdc_cell.vhd|
+!i113 1
+R12
+R13
+Atdc_cell_arq
+R2
+R3
+DEx4 work 8 tdc_cell 0 22 CI8PjEYXnmRdRTA@FVC2Q2
+l17
+L14
+VlQK5>^X?54QXj8XIS_eDV3
+!s100 V^aZf5cCY3a1aMCmQ7LiY2
+R7
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R12
+R13
