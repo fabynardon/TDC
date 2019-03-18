@@ -43,10 +43,11 @@ ARCHITECTURE behavior OF tdc_tb IS
    signal reset : std_logic := '0';
 
  	--Outputs
-   signal salida : std_logic_vector(11 downto 0);
-
+   signal fine : std_logic_vector(63 downto 0);
+	signal coarse : std_logic_vector(3 downto 0);
+	
    -- Clock period definitions
-   constant clock_period : time := 20 ns;
+   constant clock_period : time := 8 ns;
  
 BEGIN
  
@@ -54,8 +55,9 @@ BEGIN
    uut: entity work.tdc 
 		PORT MAP (
 			stop => stop,
-         salida => salida,
-         clock_in => clock,
+         fine => fine,
+			coarse => coarse,
+         clock => clock,
          reset => reset
         );
 
@@ -75,7 +77,7 @@ BEGIN
    stim_proc: process
    begin	
 		reset <= '1';
-      wait for 100 ns;
+      wait for 3 us;
 		reset <= '0';
       wait for clock_period*10;
 		
